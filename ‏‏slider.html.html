@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidecontainer {
+  width: 50;
+}
+
+.slider {
+  
+  width: 1000;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  
+}
+
+</style>
+</head>
+<body>
+
+<form method="POST" action="insert.php">
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="myRange" name="Motor1">
+  <label for="motot">Motor1:</label>
+  <p>Value: <span id="demo"></span></p>
+</div>
+
+
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="myRange1" name="Motor2">
+  <label for="motot">Motor2:</label>
+  <p>Value: <span id="demo1"></span></p>
+</div>
+
+
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="myRange2" name="Motor3">
+  <label for="motot">Motor3:</label>
+  <p>Value: <span id="demo2"></span></p>
+</div>
+
+ 
+<div class="slidecontainer">
+    <input type="range" min="0" max="100" value="50" class="slider" id="myRange3" name="Motor4">
+    <label for="motot">Motor4:</label>
+    <p>Value: <span id="demo3"></span></p>
+</div>
+ 
+
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="myRange4" name="Motor5">
+  <label for="motot">Motor5:</label>
+  <p>Value: <span id="demo4"></span></p>
+</div>
+
+  
+<div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="myRange5" name="Motor6">
+  <label for="motot">Motor6:</label>
+  <p>Value: <span id="demo5"></span></p>
+</div>
+
+
+<button type="submit" class="btn btn-primary">save</button>
+<br>
+<button type="submit" class="btn btn-danger">run</button>
+</form>
+
+<script>
+  let sliders = document.querySelectorAll("input.slider");
+  let outputs = document.querySelectorAll("span");
+  outputs.forEach ((item, index)=>{
+
+   item.innerHTML = sliders[index].value;
+   sliders[index].oninput  = function(){item.innerHTML = this.value};
+  }); 
+           
+ </script>
+
+</body>
+</html>
+
